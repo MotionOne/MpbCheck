@@ -1,0 +1,37 @@
+// MpbCheck.idl : IDL source for MpbCheck
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (MpbCheck.tlb) and marshalling code.
+
+#include "olectl.h"
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(A14DE46F-7D2F-4807-AAB1-1977081CDBE2),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface IMpbCheckCtrl : IDispatch{
+};
+
+[
+	uuid(0BA3A641-5D2F-4925-B49F-9160854EEFF0),
+	version(1.0),
+]
+library MpbCheckLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(9CE7C297-9C22-4E9C-A933-78D3210DDFA8),		
+		control
+	]
+	coclass MpbCheckCtrl
+	{
+		[default] interface IMpbCheckCtrl;
+	};
+};
+
