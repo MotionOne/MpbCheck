@@ -31,6 +31,7 @@ public:
 
 	CMpbCheckCtrl()
 	{
+		//MessageBox(0, L"aaa", MB_OK);
 	}
 
 DECLARE_OLEMISC_STATUS(OLEMISC_RECOMPOSEONRESIZE |
@@ -159,6 +160,8 @@ public:
 
 	void FinalRelease()
 	{
+		//MessageBox(0, L"bbbb", MB_OK);
+		CoFreeUnusedLibrariesEx(1000, 0);
 	}
 };
 

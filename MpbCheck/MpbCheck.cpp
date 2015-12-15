@@ -12,8 +12,15 @@ using namespace ATL;
 // Used to determine whether the DLL can be unloaded by OLE.
 STDAPI DllCanUnloadNow(void)
 {
-			return _AtlModule.DllCanUnloadNow();
-	}
+	HRESULT hr = _AtlModule.DllCanUnloadNow();
+	//if (hr == S_OK)
+	//	MessageBox(0, L"S_OK : DllCanUnloadNow() called ", L"hhh", MB_OK);
+	//else
+	//	MessageBox(0, L"S_FALSE : DllCanUnloadNow() called ", L"hhh", MB_OK);
+
+
+	return hr;
+}
 
 // Returns a class factory to create an object of the requested type.
 STDAPI DllGetClassObject(_In_ REFCLSID rclsid, _In_ REFIID riid, _Outptr_ LPVOID* ppv)
